@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search q = {{ q }}</title>
+    </head>
+    <body>
+
+        <h1>Using MongoDB</h1>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Gid</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each game}}
+                    <tr >
+                        <td><code>{{ this.gid }}</code></td>
+                        <td><a href="{{ this.url }}" target="_blank">{{ this.name }}</a></td>
+                        <td>
+                            <img src="{{ this.image }}">
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+        </div>
+        
+    </body>
+</html>

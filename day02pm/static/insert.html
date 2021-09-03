@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insert</title>
+    </head>
+    <body>
+
+        <h1>Add a New Boardgame</h1>
+
+        <!-- application/x-www-form-urlencoded -->
+        <form method="POST" action="/game">
+
+            <table>
+                <tr>
+                    <td>Game id:</td>
+                    <td>
+                        <input type="number" name="gid" required placeholder="Enter a game id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>
+                        <input type="text" name="name" required placeholder="Name of the game">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Published Year:</td>
+                    <td>
+                        <input type="number" name="year" required placeholder="Year">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ranking:</td>
+                    <td>
+                        <input type="number" name="ranking" required placeholder="Boardgame Geek ranking">
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL:</td>
+                    <td>
+                        <input type="text" name="url" required placeholder="url" size="100">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Image:</td>
+                    <td>
+                        <input type="text" name="image" required placeholder="Image url" size="100">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Add</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+    </body>
+</html>
