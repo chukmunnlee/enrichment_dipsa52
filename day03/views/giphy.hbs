@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Giphy Search</title>
+    </head>
+    <body>
+        <h4><a href="/">Back</a></h4>
+
+        {{#if hasResult }}
+            <h2>Your search of '{{ terms }}' returned the following</h2>
+            <br>
+
+            {{#each urls}}
+                <div>
+                    <img src="{{ this }}" alt="">
+                </div>
+            {{/each}}
+        {{else}}
+            <h2>Your search of '{{ terms }}' produces no result</h2>
+
+        {{/if}}
+        
+    </body>
+</html>

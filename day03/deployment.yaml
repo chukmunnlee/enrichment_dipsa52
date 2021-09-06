@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: giphy-deploy
+   labels:
+      name: giphy-deploy
+
+spec:
+   replicas: 2
+   selector:
+      matchLabels:
+         name: giphy-pod
+
+   template:
+      # defining a pod - containers
+      metadata:
+         name: giphy-pod
+         labels:
+            name: giphy-pod
+      spec:
+         containers:
+         - name: giphy-container
+           image: chukmunnlee/giphy:v1
+           imagePullPolicy: IfNotPresent
+           envFrom:
+           - secretRef:
+              name: giphy-secret
+           ports:
+           - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: giphy-svc
+   labels:
+      name: giphy-svc
+
+spec:
+   type: ClusterIP
+   selector:
+      name: giphy-pod
+   ports:
+   - port: 8080
+     targetPort: 3000
